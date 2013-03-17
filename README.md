@@ -5,14 +5,14 @@ This repository contains the source code for Assignment 3 for CSC 309 Spring 201
 
 ## Instructor
 
-*Juan Gonzales*
+**Juan Gonzales**s
 
 ## Authors
 
-*Jiang Tao Hong*
-*Kevin Leung*
-*Mihai Nicolae*
-*Philip Ojha*
+**Jiang Tao Hong**
+**Kevin Leung**
+**Mihai Nicolae**
+**Philip Ojha**
 
 ## Links
 
