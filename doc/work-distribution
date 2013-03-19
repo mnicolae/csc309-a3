@@ -1,0 +1,9 @@
+tweet: date, text, source, retweet count, favorites count
+
+user: name, screen name, follower count, following count, tweets count, favorites count, time-zone, avatar, background image, created at
+skip everything else
+
+js function to sort through the json and return the tweets sorted by date - Kevin
+format json tweet into pretty box - Jackson 
+provide two layouts based on screen width - Mihai
+pop-up window - Philip
