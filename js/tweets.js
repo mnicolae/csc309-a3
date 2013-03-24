@@ -15,7 +15,7 @@ function sortTweets(evt) {
     jQuery.each(JSONarray, function(index, value){
         tweets.push({
 
-            // user stuff
+            // user info
             "user_name": JSONarray[index].user.name,
             "user_screen_name": JSONarray[index].user.screen_name,
             "location": JSONarray[index].user.location,
@@ -31,7 +31,6 @@ function sortTweets(evt) {
             "text" : JSONarray[index].text,
             "source" : JSONarray[index].source,
             "retweet_count" : JSONarray[index].retweet_count
-            //favorites count ?
             });
     });
     
@@ -44,13 +43,11 @@ function sortTweets(evt) {
         return 0;
     });
 
-    // for testing purposes only. remove later
-    // why remove ?
     for (var i=0; i < tweets.length; i++){
-        $('#tweets').append('<li>');
-        $('#tweets').append(tweets[i].created_at + '</br>');
+        //$('#tweets').append('<li>');
+        //$('#tweets').append(tweets[i].created_at + '</br>');
         presentUser(tweets, i);
-        $('#tweets').append('</li>');
+        //$('#tweets').append('</li>');
 
     }
 
@@ -60,16 +57,15 @@ function sortTweets(evt) {
 function presentUser(tweets, index) {
     var user = '<a href="#popup" data-rel="dialog" data-role="button">' +
     tweets[index].user_name + '</a>';
-    var content = '<p>' + tweets[index].user_screen_name + '</p>';
-    content += '<p>' + tweets[index].location + '</p>';
-    content += '<p>' + tweets[index].description + '</p>';
-    content += '<p>' + tweets[index].url + '</p>';
-    content += '<p>' + tweets[index].followers_count + '</p>';
-    content += '<p>' + tweets[index].friends_count + '</p>';
-    content += '<p>' + tweets[index].listed_count + '</p>';
-    content += '<p>' + tweets[index].user_created_at + '</p>';
-    content += '<p>' + tweets[index].favourites_count + '</p>';
-    content += '<p>' + tweets[index].location + '</p>';
+    var content = '<p><b>Screen Name:</b> ' + tweets[index].user_screen_name + '</p>';
+    content += '<p><b>Location:</b> ' + tweets[index].location + '</p>';
+    content += '<p><b>Tweet:</b> ' + tweets[index].description + '</p>';
+    content += '<p><b>URL:</b> ' + tweets[index].url + '</p>';
+    content += '<p><b>Followers Count:</b> ' + tweets[index].followers_count + '</p>';
+    content += '<p><b>Friends Count:</b> ' + tweets[index].friends_count + '</p>';
+    content += '<p><b>Listed Count:</b> ' + tweets[index].listed_count + '</p>';
+    content += '<p><b>Create at:</b> ' + tweets[index].user_created_at + '</p>';
+    content += '<p><b>Favourites Count:</b> ' + tweets[index].favourites_count + '</p>';
 
     $('#tweets').append(user + '</br>');
     $('#user-content').html(content);
