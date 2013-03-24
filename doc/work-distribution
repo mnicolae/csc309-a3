@@ -4,6 +4,7 @@ user: name, screen name, follower count, following count, tweets count, favorite
 skip everything else
 
 js function to sort through the json and return the tweets sorted by date - Kevin
+* kevin - also remember to paginate them (e.g. 10 per page or wtvr) - philip *
 format json tweet into pretty box - Jackson 
 provide two layouts based on screen width - Mihai
 pop-up window - Philip

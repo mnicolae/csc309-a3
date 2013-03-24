@@ -27,6 +27,8 @@ function sortTweets(evt) {
             "user_created_at": JSONarray[index].user.created_at,
             "favourites_count": JSONarray[index].user.favourites_count,
 
+
+            // tweet info
             "created_at" : JSONarray[index].created_at,
             "text" : JSONarray[index].text,
             "source" : JSONarray[index].source,
@@ -44,29 +46,42 @@ function sortTweets(evt) {
     });
 
     for (var i=0; i < tweets.length; i++){
-        //$('#tweets').append('<li>');
+        $('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
         presentUser(tweets, i);
-        //$('#tweets').append('</li>');
+        $('#tweets').append('</li>');
 
     }
+      $("#tweets").listview("refresh");
 
     return tweets;
 }
 
+// create the popup window with the user information
 function presentUser(tweets, index) {
-    var user = '<a href="#popup" data-rel="dialog" data-role="button">' +
-    tweets[index].user_name + '</a>';
-    var content = '<p><b>Screen Name:</b> ' + tweets[index].user_screen_name + '</p>';
-    content += '<p><b>Location:</b> ' + tweets[index].location + '</p>';
-    content += '<p><b>Tweet:</b> ' + tweets[index].description + '</p>';
-    content += '<p><b>URL:</b> ' + tweets[index].url + '</p>';
-    content += '<p><b>Followers Count:</b> ' + tweets[index].followers_count + '</p>';
-    content += '<p><b>Friends Count:</b> ' + tweets[index].friends_count + '</p>';
-    content += '<p><b>Listed Count:</b> ' + tweets[index].listed_count + '</p>';
-    content += '<p><b>Create at:</b> ' + tweets[index].user_created_at + '</p>';
-    content += '<p><b>Favourites Count:</b> ' + tweets[index].favourites_count + '</p>';
+    
+    // user name 
+    var user = '<h3><a href="#popup' + index + '" data-rel="dialog" data-role="button">' +
+    tweets[index].user_name + '</a></h3>';
 
-    $('#tweets').append(user + '</br>');
-    $('#user-content').html(content);
+    // popup dialog
+    var content = '<div id="popup' + index +'"data-role="dialog"  data-close-btn="right">' +
+'<div data-role="header"><h3></h3></div>' +
+'<div  data-role="content" id = "user-content"></div>'; 
+    content += '<ul id="popup-list" data-role="listview"' +
+    'data-inset="true"><li><b>Screen Name:</b> ' +
+    tweets[index].user_screen_name + '</li>';
+    content += '<li><b>Location:</b> ' + tweets[index].location + '</li>';
+    content += '<li><b>Tweet:</b> ' + tweets[index].description + '</li>';
+    content += '<li><b>URL:</b><a href= "' + tweets[index].url + '">' + tweets[index].url + '</a></li>';
+    content += '<li><b>Followers Count:</b> ' + tweets[index].followers_count + '</li>';
+    content += '<li><b>Friends Count:</b> ' + tweets[index].friends_count + '</li>';
+    content += '<li><b>Listed Count:</b> ' + tweets[index].listed_count + '</li>';
+
+    // needs to be reformatted
+    content += '<li><b>Create at:</b> ' + tweets[index].user_created_at + '</p>';
+    content += '<li><b>Favourites Count:</b> ' + tweets[index].favourites_count + '</li></ul>';
+
+    $('#tweets').append(user);
+    $('body').append(content);
 }
