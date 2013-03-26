@@ -34,8 +34,8 @@ function sortTweets(evt) {
             "text" : JSONarray[index].text,
             "source" : JSONarray[index].source,
             "retweet_count" : JSONarray[index].retweet_count
-            "urls": JSONarray[index].entities.urls
-            "user_mentions": JSONarray[index].entities.user_mentions
+            //"urls": JSONarray[index].entities.urls,
+            //"user_mentions": JSONarray[index].entities.user_mentions
             });
     });
     
@@ -49,11 +49,11 @@ function sortTweets(evt) {
     });
 
     for (var i = 0; i < tweets.length; i++) {
-        //$('#tweets').append('<li>');
+        $('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        //presentUser(tweets, i);
-        formatTweet(tweets[i]);
-        //$('#tweets').append('</li>');
+        presentUser(tweets, i);
+        //formatTweet(tweets[i]);
+        $('#tweets').append('</li>');
 
     }
     
@@ -97,6 +97,9 @@ function presentUser(tweets, index) {
  * This functionality might be changed later!
  */
 function formatTweet(tweet) {
+
+    //formatTweetText(tweet);
+    
     var tweetHTML = "<li id=" + tweet.id_str + " class=tweet>" +
                         "<a href='#'>" +
                         "<img class=profile_pic src=" + tweet.profile_picture + ">" +
@@ -107,4 +110,15 @@ function formatTweet(tweet) {
                     "</li>";
 
     $('#tweets').append(tweetHTML);
+}
+
+function formatTweetText(tweet) {
+    formatUserMentions(tweet);
+}
+
+function formatUserMentions(tweet) {
+    $.each(tweet.user_mentions, function(index, value)) {
+        var html = "<a href=http://twitter.com/" + value.screen_name;
+        tweet.text = [tweet.text(0, value.indices[0]), html, tweet.text(value.indices[1], -1)].join("");
+    });
 }
