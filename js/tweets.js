@@ -17,7 +17,7 @@ function sortTweets(evt) {
 
             // user info
             "user_name": JSONarray[index].user.name,
-            "user_screen_name": JSONarray[index].user.screen_name,
+            "user_screen_name": "@" + JSONarray[index].user.screen_name,
             "location": JSONarray[index].user.location,
             "description": JSONarray[index].user.description,
             "url": JSONarray[index].user.url,
@@ -29,6 +29,7 @@ function sortTweets(evt) {
             "profile_picture": JSONarray[index].user.profile_image_url,
 
             // tweet info
+            "id_str" : JSONarray[index].id_str,
             "created_at" : JSONarray[index].created_at,
             "text" : JSONarray[index].text,
             "source" : JSONarray[index].source,
@@ -87,16 +88,20 @@ function presentUser(tweets, index) {
     $('body').append(content);
 }
 
-/* Given a tweet JSON object, generate an corresponding HTML tweet object.
+/* Given a tweet JSON object, generate a 
+ * corresponding HTML tweet object.
+ * 
  * Append it to the tweets unordered list. 
  * This functionality might be changed later!
  */
 function formatTweet(tweet) {
-    var tweetHTML = "<li><a href='#''>" +
-                        "<img src=" + tweet.profile_picture + ">" +
-                        "<h2>" + tweet.user_name + "</h2>" +
-                        "<p><strong>" + tweet.user_screen_name + "</strong><p>" +
-                        "<p>" + tweet.text + "</p>" + 
+    var tweetHTML = "<li id=" + tweet.id_str + " class=tweet>" +
+                        "<a href='#'>" +
+                        "<img class=profile_pic src=" + tweet.profile_picture + ">" +
+                        "<h3 class=user_name>" + tweet.user_name + 
+                            "<a class=user_tag href='#'>" + tweet.user_screen_name + "</a>" +
+                        "</h3>" +
+                        "<p class=text>" + tweet.text + "</p>" + 
                     "</li>";
 
     $('#tweets').append(tweetHTML);
