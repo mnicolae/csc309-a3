@@ -48,8 +48,8 @@ function sortTweets(evt) {
     for (var i = 0; i < tweets.length; i++) {
         $('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        //presentUser(tweets, i);
-        formatTweet(tweets[i]);
+        presentUser(tweets, i);
+        //formatTweet(tweets[i]);
         $('#tweets').append('</li>');
 
     }
@@ -87,11 +87,15 @@ function presentUser(tweets, index) {
     $('body').append(content);
 }
 
-// Given a tweet JSON object, generate an corresponding HTML tweet object.
+/* Given a tweet JSON object, generate an corresponding HTML tweet object.
+ * Append it to the tweets unordered list. 
+ * This functionality might be changed later!
+ */
 function formatTweet(tweet) {
     var tweetHTML = "<li><a href='#''>" +
                         "<img src=" + tweet.profile_picture + ">" +
                         "<h2>" + tweet.user_name + "</h2>" +
+                        "<p><strong>" + tweet.user_screen_name + "</strong><p>" +
                         "<p>" + tweet.text + "</p>" + 
                     "</li>";
 
