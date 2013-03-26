@@ -34,6 +34,8 @@ function sortTweets(evt) {
             "text" : JSONarray[index].text,
             "source" : JSONarray[index].source,
             "retweet_count" : JSONarray[index].retweet_count
+            "urls": JSONarray[index].entities.urls
+            "user_mentions": JSONarray[index].entities.user_mentions
             });
     });
     
@@ -47,11 +49,11 @@ function sortTweets(evt) {
     });
 
     for (var i = 0; i < tweets.length; i++) {
-        $('#tweets').append('<li>');
+        //$('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        presentUser(tweets, i);
-        //formatTweet(tweets[i]);
-        $('#tweets').append('</li>');
+        //presentUser(tweets, i);
+        formatTweet(tweets[i]);
+        //$('#tweets').append('</li>');
 
     }
     
