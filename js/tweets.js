@@ -7,12 +7,12 @@ function readJSON(files){
 
 // Return an array of tweets sorted by the most recent
 function sortTweets(evt) {
-    // reconstruct the tweets and place tem into an array
+    // reconstruct the tweets and place them into an array
     var fileContent = evt.target.result;
     var JSONarray = jQuery.parseJSON(fileContent);
 
     var tweets = [];
-    jQuery.each(JSONarray, function(index, value){
+    jQuery.each(JSONarray, function(index, value) {
         tweets.push({
 
             // user info
@@ -26,7 +26,7 @@ function sortTweets(evt) {
             "listed_count": JSONarray[index].user.listed_count,
             "user_created_at": JSONarray[index].user.created_at,
             "favourites_count": JSONarray[index].user.favourites_count,
-
+            "profile_picture": JSONarray[index].user.profile_image_url,
 
             // tweet info
             "created_at" : JSONarray[index].created_at,
@@ -37,7 +37,7 @@ function sortTweets(evt) {
     });
     
     // sort the array of tweets
-    tweets.sort(function(a, b){
+    tweets.sort(function(a, b) {
         a = new Date(a.created_at);
         b = new Date(b.created_at);
         if (a > b) return -1;
@@ -45,15 +45,16 @@ function sortTweets(evt) {
         return 0;
     });
 
-    for (var i=0; i < tweets.length; i++){
+    for (var i = 0; i < tweets.length; i++) {
         $('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        presentUser(tweets, i);
+        //presentUser(tweets, i);
+        formatTweet(tweets[i]);
         $('#tweets').append('</li>');
 
     }
-      $("#tweets").listview("refresh");
-
+    
+    $("#tweets").listview("refresh");
     return tweets;
 }
 
@@ -84,4 +85,15 @@ function presentUser(tweets, index) {
 
     $('#tweets').append(user);
     $('body').append(content);
+}
+
+// Given a tweet JSON object, generate an corresponding HTML tweet object.
+function formatTweet(tweet) {
+    var tweetHTML = "<li><a href='#''>" +
+                        "<img src=" + tweet.profile_picture + ">" +
+                        "<h2>" + tweet.user_name + "</h2>" +
+                        "<p>" + tweet.text + "</p>" + 
+                    "</li>";
+
+    $('#tweets').append(tweetHTML);
 }
