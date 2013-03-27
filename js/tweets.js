@@ -93,28 +93,25 @@ function presentUser(tweets, index) {
 function formatTweetText(tweet) {
     formatUserMentions(tweet);
     formatLinks(tweet);
+    formatHashTags(tweet);
 }
 
 function formatUserMentions(tweet) {
-    /*
     $.each(tweet.user_mentions, function(index, value) {
         var htmlElement = 
                         "<a id=" + value.id + " class=user_mention href=http://twitter.com/" + value.screen_name + ">" 
                             + "@" + value.screen_name + 
                         "</a>";
-        console.log(value.indices);
-        //tweet.text = [tweet.text.slice(0, value.indices[0]), htmlElement, tweet.text.slice(value.indices[1])].join("");
-        //console.log(tweet.text.slice(0, value.indices[0]));
-        //console.log(tweet.text.slice(value.indices[1]));
-        //console.log(tweet.text);
-        //console.log("new tweet");
-        //tweet.text = [tweet.text.slice(0, value.indices[0]), html, tweet.text.subtr(value.indices[1])].join("");
+        tweet.text = tweet.text.replace("@" + value.screen_name, htmlElement);
     });
-    */
 }
 
 function formatLinks(tweet) {
 
+}
+
+function formatHashTags(tweet) {
+    
 }
 
 /* Given a tweet JSON object, generate a 
