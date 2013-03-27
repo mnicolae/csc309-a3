@@ -50,11 +50,11 @@ function sortTweets(evt) {
     });
 
     for (var i = 0; i < tweets.length; i++) {
-        //$('#tweets').append('<li>');
+        $('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        //presentUser(tweets, i);
-        formatTweet(tweets[i]);
-        //$('#tweets').append('</li>');
+        presentUser(tweets, i);
+        //formatTweet(tweets[i]);
+        $('#tweets').append('</li>');
 
     }
     
@@ -92,50 +92,54 @@ function presentUser(tweets, index) {
 }
 
 /*
- *
+ * Format the text of a tweet. 
+ * Mainly, format links, user mentions and hashtags.
  */
 function formatTweetText(tweet) {
-    formatUserMentions(tweet);
     formatLinks(tweet);
+    formatUserMentions(tweet);
     formatHashTags(tweet);
 }
 
 /*
- *
+ * Make link elements clickable.
+ * Currently opens the link in a new tab.
  */
 function formatLinks(tweet) {
     $.each(tweet.urls, function(index, value) {
-        var htmlElement = 
+        var linkHTML = 
                         "<a class=tweet_link href=" + value.url + ">" +
                             value.display_url + 
                         "</a>";
-        tweet.text = tweet.text.replace(value.url, htmlElement);
+        tweet.text = tweet.text.replace(value.url, linkHTML);
     });
 }
 
 /*
- *
+ * Make user mention elements clickable.
+ * Currently links to the Twitter page of the respective user.
  */
 function formatUserMentions(tweet) {
     $.each(tweet.user_mentions, function(index, value) {
-        var htmlElement = 
+        var user_mentionHTML = 
                         "<a id=" + value.id + " class=user_mention href=http://twitter.com/" + value.screen_name + ">" 
                             + "@" + value.screen_name + 
                         "</a>";
-        tweet.text = tweet.text.replace("@" + value.screen_name, htmlElement);
+        tweet.text = tweet.text.replace("@" + value.screen_name, user_mentionHTML);
     });
 }
 
 /*
- *
+ * Make hashtag elements clickable. 
+ * Does not link anywhere yet.
  */
 function formatHashTags(tweet) {
     $.each(tweet.hash_tags, function(index, value) {
-        var htmlElement = 
+        var hash_tagHTML = 
                         "<a id=" + value.text + " class=hash_tag href='#''>" 
                             + "#" + value.text + 
                         "</a>";
-        tweet.text = tweet.text.replace("#" + value.text, htmlElement);
+        tweet.text = tweet.text.replace("#" + value.text, hash_tagHTML);
     });
 }
 
