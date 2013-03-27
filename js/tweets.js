@@ -35,7 +35,8 @@ function sortTweets(evt) {
             "source" : JSONarray[index].source,
             "retweet_count" : JSONarray[index].retweet_count,
             "user_mentions": JSONarray[index].entities.user_mentions,
-            "urls": JSONarray[index].entities.urls
+            "urls": JSONarray[index].entities.urls,
+            "hash_tags": JSONarray[index].entities.hashtags
             });
     });
     
@@ -129,7 +130,13 @@ function formatUserMentions(tweet) {
  *
  */
 function formatHashTags(tweet) {
-
+    $.each(tweet.hash_tags, function(index, value) {
+        var htmlElement = 
+                        "<a id=" + value.text + " class=hash_tag href='#''>" 
+                            + "#" + value.text + 
+                        "</a>";
+        tweet.text = tweet.text.replace("#" + value.text, htmlElement);
+    });
 }
 
 /* Given a tweet JSON object, generate a 
