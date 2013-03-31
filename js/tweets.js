@@ -33,6 +33,7 @@ function sortTweets(evt) {
             "user_created_at": JSONarray[index].user.created_at,
             "favourites_count": JSONarray[index].user.favourites_count,
             "profile_picture": JSONarray[index].user.profile_image_url,
+            "profile_background_picture": JSONarray[index].user.profile_background_image_url,
 
             // tweet info
             "id_str" : JSONarray[index].id_str,
@@ -56,11 +57,11 @@ function sortTweets(evt) {
     });
 
     for (var i = 0; i < tweets.length; i++) {
-        $('#tweets').append('<li>');
+        //$('#tweets').append('<li>');
         //$('#tweets').append(tweets[i].created_at + '</br>');
-        presentUser(tweets, i);
-        //formatTweet(tweets[i]);
-        $('#tweets').append('</li>');
+        //presentUser(tweets, i);
+        formatTweet(tweets[i]);
+        //$('#tweets').append('</li>');
 
     }
     
@@ -161,11 +162,11 @@ function formatTweet(tweet) {
     
     var tweetHTML = "<li id=" + tweet.id_str + " class=tweet>" +
                         "<a href='#'>" +
-                        "<img class=profile_pic src=" + tweet.profile_picture + ">" +
+                        "<img class=profile_pic src=" + tweet.profile_background_picture + ">" +
                         "<h3 class=user_name>" + tweet.user_name + 
                             "<a class=user_tag href='#'>" + tweet.user_screen_name + "</a>" +
                         "</h3>" +
-                        "<p class=text>" + tweet.text + "</p>" + 
+                        "<p class=text ui-li aside>" + tweet.text + "</p>" + 
                     "</li>";
 
     $('#tweets').append(tweetHTML);
