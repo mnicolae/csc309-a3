@@ -5,11 +5,17 @@ function readJSON(files){
     reader.readAsBinaryString(document.getElementById('jsonInput').files[0]);
 }
 
+$(document).ready(function() {
+    $.getJSON('favs.json', function (data) {
+        sortTweets(data);
+    });
+});
+
+
 // Return an array of tweets sorted by the most recent
 function sortTweets(evt) {
     // reconstruct the tweets and place them into an array
-    var fileContent = evt.target.result;
-    var JSONarray = jQuery.parseJSON(fileContent);
+    var JSONarray = evt;
 
     var tweets = [];
     jQuery.each(JSONarray, function(index, value) {
