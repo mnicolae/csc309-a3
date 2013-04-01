@@ -6,7 +6,7 @@ function readJSON(files){
 }
 
 $(document).ready(function() {
-    $.getJSON('favs.json', function (data) {
+    $.getJSON('favs_large.json', function (data) {
         sortTweets(data);
     });
 });
