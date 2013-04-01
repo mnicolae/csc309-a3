@@ -103,9 +103,9 @@ function presentUser(tweets, index) {
  * Mainly, format links, user mentions and hashtags.
  */
 function formatTweetText(tweet) {
-    formatLinks(tweet);
-    formatUserMentions(tweet);
-    formatHashTags(tweet);
+    //formatLinks(tweet);
+    //formatUserMentions(tweet);
+    //formatHashTags(tweet);
 }
 
 /*
@@ -160,13 +160,14 @@ function formatTweet(tweet) {
 
     formatTweetText(tweet);
     
-    var tweetHTML = "<li id=" + tweet.id_str + " class=tweet>" +
-                        "<a href='#'>" +
-                        "<img class=profile_pic src=" + tweet.profile_background_picture + ">" +
-                        "<h3 class=user_name>" + tweet.user_name + 
-                            "<a class=user_tag href='#'>" + tweet.user_screen_name + "</a>" +
-                        "</h3>" +
-                        "<p class=text ui-li aside>" + tweet.text + "</p>" + 
+    var tweetHTML = "<li class=ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-first-child ui-btn-up-a data-corners=false data-shadow=false data-iconshadow=true data-wrapperels=div data-icon=arrow-r data-iconpos=right data-theme=a>" +
+                        
+                        "<a class=ui-link-inherit href=#>" +
+                            "<p class=ui-li-aside ui-li-desc>" + tweet.user_screen_name + "</p>" +
+                            "<img class=ui-li-thumb src=" + tweet.profile_background_picture + ">" +    
+                            "<h3 class=ui-li-heading>" + tweet.user_name + "</h3>" +
+                            "<p class=text ui-li-desc>" + tweet.text + "</p>" +
+                        "</a>" +
                     "</li>";
 
     $('#tweets').append(tweetHTML);
