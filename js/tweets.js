@@ -70,29 +70,58 @@ function sortTweets(evt) {
 }
 
 // create the popup window with the user information
-function presentUser(tweets, index) {
-    
+function presentUser(tweets, index) {   
     // user name 
-    var user = '<h3><a href="#popup' + index + '" data-rel="dialog" data-role="button">' +
-    tweets[index].user_name + '</a></h3>';
+    var user = 
+                "<h3>" + 
+                    "<a href=#popup" + index + "data-rel=dialog data-role=button>" +
+                        tweets[index].user_name + 
+                    "</a>" + 
+                "</h3>";
 
     // popup dialog
-    var content = '<div id="popup' + index +'"data-role="dialog"  data-close-btn="right">' +
-'<div data-role="header"><h3></h3></div>' +
-'<div  data-role="content" id = "user-content"></div>'; 
-    content += '<ul id="popup-list" data-role="listview"' +
-    'data-inset="true"><li><b>Screen Name:</b> ' +
-    tweets[index].user_screen_name + '</li>';
-    content += '<li><b>Location:</b> ' + tweets[index].location + '</li>';
-    content += '<li><b>Tweet:</b> ' + tweets[index].description + '</li>';
-    content += '<li><b>URL:</b><a href= "' + tweets[index].url + '">' + tweets[index].url + '</a></li>';
-    content += '<li><b>Followers Count:</b> ' + tweets[index].followers_count + '</li>';
-    content += '<li><b>Friends Count:</b> ' + tweets[index].friends_count + '</li>';
-    content += '<li><b>Listed Count:</b> ' + tweets[index].listed_count + '</li>';
+    var content = 
+                "<div id=popup" + index + "data-role=dialog data-close-btn=right>" +
+                    "<div data-role=header>" +
+                        "<h3>" +
+                        
+                        "</h3>" +
+                    "</div>" +
+                    "<div data-role=content id=user-content>" +
+                    "</div>";
 
-    // needs to be reformatted
-    content += '<li><b>Create at:</b> ' + tweets[index].user_created_at + '</p>';
-    content += '<li><b>Favourites Count:</b> ' + tweets[index].favourites_count + '</li></ul>';
+    content += 
+                "<ul id=popup-list data-role=listview data-inset=true>" +
+                "<li>
+                    <b>Screen Name:</b>" + tweets[index].user_screen_name + 
+                "</li>" +
+                "<li>" + 
+                    "<b>Location:</b>" + tweets[index].location + 
+                "</li>" +
+                "<li>" +
+                    "<b>Tweet:</b>" + tweets[index].description + 
+                "</li>" +
+                "<li>" +
+                    "<b>URL:</b><a href=" + tweets[index].url + ">" + tweets[index].url + "</a>"
+                "</li>" +
+                "<li>" + 
+                    "<b>Followers Count:</b>" + tweets[index].followers_count + 
+                "</li>" +
+                "<li>" +
+                    "<b>Friends Count:</b>" + tweets[index].friends_count + 
+                "</li>" +
+                "<li>" +
+                    "<b>Listed Count:</b>" + tweets[index].listed_count + 
+                "</li>" +
+
+                // needs to be reformatted
+                "<li>" + 
+                    "<b>Created at:</b>" + tweets[index].user_created_at +
+                "<li>" + 
+                    "<b>Favourites Count:</b>" + tweets[index].favourites_count + 
+                "</li>";
+
+    content += "</ul>";
 
     $('#tweets').append(user);
     $('body').append(content);
@@ -161,7 +190,6 @@ function formatTweet(tweet) {
     formatTweetText(tweet);
     
     var tweetHTML = "<li class=ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-first-child ui-btn-up-a data-corners=false data-shadow=false data-iconshadow=true data-wrapperels=div data-icon=arrow-r data-iconpos=right data-theme=a>" +
-                        
                         "<a class=ui-link-inherit href=#>" +
                             "<p class=ui-li-aside ui-li-desc>" + tweet.user_screen_name + "</p>" +
                             "<img class=ui-li-thumb src=" + tweet.profile_background_picture + ">" +    
