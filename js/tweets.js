@@ -71,22 +71,40 @@ function addUserPopup(tweet) {
     // popup dialog
     var content = 
                 "<div id=popup" + tweet.user_id_str + " data-role=dialog data-close-btn=right>" +
-                "<div data-role=header><h3></h3></div>" +
-                "<div data-role=content id=user-content></div>";
+                "<div data-role='header'><h3>Profile Summary</h3></div>" +
+                "<div style='text-align:center;' data-role=content id=user-content>";
     
-    content += 
-                "<ul id=popup-list data-role=listview data-inset=true>" + 
-                    "<li><b>Screen Name:</b> " + tweet.user_screen_name + "</li>";
-    content += "<li><b>Location:</b> " + tweet.location + "</li>";
-    content += "<li><b>Description:</b> " + tweet.description + "</li>";
-    content += "<li><b>URL:</b><a href=" + tweet.url + ">" + tweet.url + "</a></li>";
-    content += "<li><b>Followers Count:</b> " + tweet.followers_count + "</li>";
-    content += "<li><b>Friends Count:</b> " + tweet.friends_count + "</li>";
-    content += "<li><b>Listed Count:</b> " + tweet.listed_count + "</li>";
+    content += "<div class='banner-info'><img src=" + tweet.profile_picture + ">" +
+               "<h1>" + tweet.user_name + "</h1>" +
+               "<p>" + tweet.user_screen_name + "</p>" +
+               "<p>" + tweet.description + "</p>" +
+               "<p>Located at: " + tweet.location + "</p>";
+    if (tweet.url){
+        content += "<p><a href='" + tweet.url + "'>" + tweet.url + "</a></p>";
+    }
+        
+    content += "<div class='f-info'><div class='follower-info'><p>" + tweet.followers_count + "</p>" +
+               "<p>Followers</p></div><div class='follower-info'><p>" + tweet.friends_count + "</p>" +
+               "<p>Friends</p></div>" +
+               "<div class='follower-info'><p>" + tweet.favourites_count + "</p>" +
+               "<p>Favorited</p></div>" +
+               "<div class='follower-info'><p>" + tweet.listed_count + "</p>" +
+               "<p>Listed</p></div>" +
 
-    // needs to be reformatted
-    content += "<li><b>Create at:</b> " + tweet.user_created_at + "</p>";
-    content += "<li><b>Favourites Count:</b> " + tweet.favourites_count + "</li></ul>";
+               "</div></div>";
+
+    //             "<ul id=popup-list data-role=listview data-inset=true>" + 
+    //                 "<li><b>Screen Name:</b> " + tweet.user_screen_name + "</li>";
+    // content += "<li><b>Location:</b> " + tweet.location + "</li>";
+    // content += "<li><b>Description:</b> " + tweet.description + "</li>";
+    // content += "<li><b>URL:</b><a href=" + tweet.url + ">" + tweet.url + "</a></li>";
+    // content += "<li><b>Followers Count:</b> " + tweet.followers_count + "</li>";
+    // content += "<li><b>Friends Count:</b> " + tweet.friends_count + "</li>";
+    // content += "<li><b>Listed Count:</b> " + tweet.listed_count + "</li>";
+
+    // // needs to be reformatted
+    // content += "<li><b>Created at:</b> " + tweet.user_created_at + "</p>";
+    // content += "<li><b>Favourites Count:</b> " + tweet.favourites_count + "</li></ul>";
 
     $("body").append(content);
 }

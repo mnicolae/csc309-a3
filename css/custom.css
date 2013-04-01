@@ -176,3 +176,12 @@
     }
 }
 /* For this demo we used images with a size of 310x310 pixels. Just before the second breakpoint the images reach their max width: 1019px - 2 x 9px padding = 1001px x 30.9333% = ~310px */
+
+.f-info {
+    margin-left: 20%;
+}
+.follower-info {
+    border: 1px dashed;
+    padding: 5px;
+    float: left;
+}
