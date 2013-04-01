@@ -11,6 +11,15 @@ $(document).ready(function() {
     });
 });
 
+$(document).on('swiperight', '#tweets li', function(event) {
+    var listitem = $(this),
+        dir = event.type === 'right',
+        transition = $.support.cssTransform3d ? dir : false;
+
+    listitem.remove();
+    $("#tweets").listview("refresh");
+});
+
 
 // Return an array of tweets sorted by the most recent
 function sortTweets(evt) {
