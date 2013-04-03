@@ -185,3 +185,7 @@
     padding: 5px;
     float: left;
 }
+
+.media-aside {
+    float:right;
+}

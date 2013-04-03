@@ -53,7 +53,8 @@ function sortTweets(evt) {
             "retweet_count" : JSONarray[index].retweet_count,
             "user_mentions": JSONarray[index].entities.user_mentions,
             "urls": JSONarray[index].entities.urls,
-            "hash_tags": JSONarray[index].entities.hashtags
+            "hash_tags": JSONarray[index].entities.hashtags,
+            "media": JSONarray[index].entities.media
             });
     });
     
@@ -182,12 +183,16 @@ function formatTweet(tweet) {
     
     var tweetHTML = "<li class=ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-first-child ui-btn-up-a data-corners=false data-shadow=false data-iconshadow=true data-wrapperels=div data-icon=arrow-r data-iconpos=right data-theme=a>" +
                         "<a class=ui-link-inherit href=#popup" + tweet.user_id_str + " data-rel=dialog data-role=button>" +
-                            "<p class=ui-li-aside ui-li-desc>" + tweet.user_screen_name + "</p>" +
-                            "<img class=ui-li-thumb src=" + tweet.profile_background_picture + ">" +    
-                            "<h3 class=ui-li-heading>" + tweet.user_name + "</h3>" +
-                            "<p class=text ui-li-desc>" + tweet.text + "</p>" +
-                        "</a>" +
-                    "</li>";
+                            "<p class=ui-li-aside ui-li-desc>" + tweet.user_screen_name + "</p>";
+    if (tweet.media) {
+        tweetHTML += "<img class=ui-li-thumb src=" + tweet.media[0].media_url + ">";
+    } else {
+        tweetHTML += "<img class=ui-li-thumb src=" + tweet.profile_background_picture + ">";
+    }
+
+    tweetHTML += "<h3 class=ui-li-heading>" + tweet.user_name + "</h3>" +
+                 "<p class=text ui-li-desc>" + tweet.text + "</p>" +
+                 "</a></li>";
 
     $('#tweets').append(tweetHTML);
 }
