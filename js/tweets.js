@@ -1,4 +1,6 @@
 // function for reading the JSON file
+var postCounter = 0;
+
 function readJSON(files){
     var reader = new FileReader();
     reader.onloadend = sortTweets;
@@ -70,6 +72,7 @@ function sortTweets(evt) {
     for (var i = 0; i < tweets.length; i++) {
         addUserPopup(tweets[i]);
         formatTweet(tweets[i]);
+        postCounter +=1;
     }
     
     $("#tweets").listview("refresh");
@@ -77,13 +80,13 @@ function sortTweets(evt) {
 }
 
 // create the popup window with the user information
-function addUserPopup(tweet) {   
+function addUserPopup(tweet) {
     // popup dialog
-    var content = 
-                "<div id=popup" + tweet.user_id_str + " data-role=dialog data-close-btn=right>" +
+    var content =
+                "<div id=popup" + postCounter + " data-role=dialog data-close-btn=right>" +
                 "<div data-role='header'><h3>Profile Summary</h3></div>" +
                 "<div style='text-align:center;' data-role=content id=user-content>";
-    
+
     content += "<div class='banner-info'><img src=" + tweet.profile_picture + ">" +
                "<h1>" + tweet.user_name + "</h1>" +
                "<p>" + tweet.user_screen_name + "</p>" +
@@ -92,7 +95,7 @@ function addUserPopup(tweet) {
     if (tweet.url){
         content += "<p><a href='" + tweet.url + "'>" + tweet.url + "</a></p>";
     }
-        
+
     content += "<div class='f-info'><div class='follower-info'><p>" + tweet.followers_count + "</p>" +
                "<p>Followers</p></div><div class='follower-info'><p>" + tweet.friends_count + "</p>" +
                "<p>Friends</p></div>" +
@@ -102,6 +105,7 @@ function addUserPopup(tweet) {
                "<p>Listed</p></div>" +
 
                "</div></div>";
+
 
     //             "<ul id=popup-list data-role=listview data-inset=true>" + 
     //                 "<li><b>Screen Name:</b> " + tweet.user_screen_name + "</li>";
@@ -182,7 +186,7 @@ function formatTweet(tweet) {
     formatTweetText(tweet);
     
     var tweetHTML = "<li class=ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-first-child ui-btn-up-a data-corners=false data-shadow=false data-iconshadow=true data-wrapperels=div data-icon=arrow-r data-iconpos=right data-theme=a>" +
-                        "<a class=ui-link-inherit href=#popup" + tweet.user_id_str + " data-rel=dialog data-role=button>" +
+                        "<a class=ui-link-inherit href=#popup" +  postCounter + " data-rel=dialog data-role=button>" +
                             "<p class=ui-li-aside ui-li-desc>" + tweet.user_screen_name + "</p>";
     if (tweet.media) {
         tweetHTML += "<img class=ui-li-thumb src=" + tweet.media[0].media_url + ">";
@@ -191,8 +195,9 @@ function formatTweet(tweet) {
     }
 
     tweetHTML += "<h3 class=ui-li-heading>" + tweet.user_name + "</h3>" +
-                 "<p class=text ui-li-desc>" + tweet.text + "</p>" +
-                 "</a></li>";
+                            "<p class=text ui-li-desc>" + tweet.text + "</p>" +
+                        "</a>" +
+                    "</li>";
 
     $('#tweets').append(tweetHTML);
 }

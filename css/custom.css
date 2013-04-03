@@ -179,13 +179,10 @@
 
 .f-info {
     margin-left: 20%;
+    border:1px solid black;
+    width: 60%;
 }
 .follower-info {
-    border: 1px dashed;
     padding: 5px;
     float: left;
-}
-
-.media-aside {
-    float:right;
 }
