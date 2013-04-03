@@ -1,0 +1,264 @@
+commit b459fdf09164b7e4b04d4570015d3e93bd1e6461
+Merge: 7e42ee0 c7e9c1d
+Author: Jiang Tao Hong <jiang.hong@mail.utoronto.ca>
+Date:   Tue Apr 2 20:43:22 2013 -0400
+
+    resolve conflicts
+
+commit 7e42ee003e7a0befe2238726be5e1d518f090f9f
+Author: Jiang Tao Hong <jiang.hong@mail.utoronto.ca>
+Date:   Tue Apr 2 20:39:49 2013 -0400
+
+    replace background picture with tweeted picture if available
+
+commit c7e9c1dcd53de8dfa25708ff8e035315a58d1f3e
+Author: philip <philip.ojha@ven.io>
+Date:   Tue Apr 2 20:14:52 2013 -0400
+
+    fixed popups not closing
+
+commit f6b8c7fb88483fa627198590b9457ca9c9edeea7
+Author: Jiang <jiang.hong@mail.utoronto.ca>
+Date:   Mon Apr 1 19:42:12 2013 -0400
+
+    swipe right to delete
+
+commit 22e4535924c3d1b944a0e7f6cec8d7e84e7ef5c0
+Author: Jiang Tao Hong <jiang.hong@mail.utoronto.ca>
+Date:   Mon Apr 1 17:24:22 2013 -0400
+
+    popup styling
+
+commit ddb1134fc7c733fbb3fedc2c4f5d2d87f19dcb3f
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Mon Apr 1 14:59:31 2013 -0400
+
+    add favicon icon
+
+commit bed19fe10e93f17590f8b69c1dc5bcd3e2a2697a
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Mon Apr 1 02:10:28 2013 -0400
+
+    remove unused css selectors
+
+commit 905a1e0e93b8a78594d9ac221a2e1c41ac24531a
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Mon Apr 1 02:00:40 2013 -0400
+
+    incorporate popups into implementation
+
+commit 5e5d2009c82c68907d37d2c87bca3f049e6f2df1
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Mon Apr 1 00:50:44 2013 -0400
+
+    nice indentation in presentUser function
+
+commit f508bc9615f38447f4db7df20c30dc865852a314
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Mon Apr 1 00:30:23 2013 -0400
+
+    reformat tweets
+
+commit 0084f87a370441bbaf230f9841d838b6d7506432
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 31 23:30:34 2013 -0400
+
+    add reference to large favs
+
+commit 2eaaaceff674f41489aa12865beb65f8039470f5
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 31 16:36:24 2013 -0400
+
+    add another json file
+
+commit 9aee847fa75d6d9e338d4a47f729f14e138475e4
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 31 16:32:43 2013 -0400
+
+    add different layouts based on width
+
+commit b146b00702d3bc2994f19a4824e02d86c4b7366f
+Author: Jiang <jiang.hong@mail.utoronto.ca>
+Date:   Sat Mar 30 22:18:41 2013 -0400
+
+    got rid of input json
+
+commit 0ab0a6202d5da1ad55941ac4de6572038bfaaf82
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 23:23:04 2013 -0400
+
+    add comments to helper functions. ready for merge with master branch
+
+commit 5634982ee5dfa693bc6cee778545cd95ad35b50e
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 23:15:10 2013 -0400
+
+    add css skeleton for hashtag
+
+commit 38d8a5fd0a92078bdeb72a5f790cebeb83c27a54
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 23:14:31 2013 -0400
+
+    format hashtages, make them clickable (they don't link anywhere though)
+
+commit 4055dd7a49f7476254e759858e27e447abc3dace
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 23:01:47 2013 -0400
+
+    formatting links in tweets done.
+
+commit ec42120cd1b898dfa00ddd55ff3608f0ebdfdaac
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 22:45:27 2013 -0400
+
+    finish user mention formatting
+
+commit 5f75aad21d89c4a70733161f9fdaa350b6e1f760
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 22:05:13 2013 -0400
+
+    some progress on userMention formatting, a bit more complicated than I thought.
+
+commit 07c3f411e16d2c002506f401f035c85c1e4a6d2b
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 16:52:28 2013 -0400
+
+    commiting, something messed up
+
+commit 12e4f22f58b2f395366f7c56ac64cac98c9b04c3
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 16:20:46 2013 -0400
+
+    add additional fields to the tweets object
+
+commit 2b3926c8b77b9a2e9f9811d5bfad0445a0eca9b3
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 12:26:55 2013 -0400
+
+    add some skeleton css, more tweet formatting (mainly add @username to the tweet)
+
+commit 5dfd57c513b58e7bf4b85b79f787728c65423bf0
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 00:19:37 2013 -0400
+
+    remove call to formatTweet function, about to merge existing with master branch.
+
+commit 2682b8c596ffd787ab04f45971d78e6df5c976bd
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 26 00:11:12 2013 -0400
+
+    start to do some tweet formatting
+
+commit f04624959ad190a153a10bbd3443521c3fd8937f
+Author: philip <philip.ojha@ven.io>
+Date:   Sun Mar 24 19:26:46 2013 -0400
+
+    popup works for all users now (as opposed to just last one), formatted contents according to jquery mobile
+
+commit 0bc91a51ae0d08d7bddf8de676e6dfa0445d06ce
+Author: unknown <kevin.leunglh@gmail.com>
+Date:   Sun Mar 24 16:55:47 2013 -0400
+
+    Labelled the tweet info
+
+commit 4f148dd487c66ae440b1130bc7ae5dc84fff3806
+Author: philip <philip.ojha@ven.io>
+Date:   Sun Mar 24 05:44:19 2013 -0400
+
+    started off the user stuff
+
+commit ad711366a72b96b8da17943aa0ecaa2b384a2daa
+Author: Kevin Leung <g1leung@cdf.toronto.edu>
+Date:   Fri Mar 22 16:08:50 2013 -0400
+
+    implmented the sort function
+
+commit 49791f7b4316f48b249403c8b458d08c543093d9
+Author: unknown <kevin.leunglh@gmail.com>
+Date:   Fri Mar 22 02:28:40 2013 -0400
+
+    Implemented functions for JSON parsing and reading
+
+commit 0d6e7ac347fbf0fdc04acfc9d840a59bfa643d19
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 19:33:44 2013 -0400
+
+    fix typo in index
+
+commit 4f233434b5bfcf6400c0489215872cde719c248a
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 19:30:04 2013 -0400
+
+    add reference to custom.css
+
+commit 78edb38a828cdac340d8dbc2f905e752a4411669
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 19:29:28 2013 -0400
+
+    add custom.css
+
+commit 7ee68e3b721e126ccadf31e63b59249c3bbc4d08
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 18:12:21 2013 -0400
+
+    add skeleton of navigation page
+
+commit 9eccbb6d5b82a8bbbf91e4d20d967ff45bd52822
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 18:08:33 2013 -0400
+
+    add jqm-demos.css, loadFavs.js
+
+commit 508b254ed0c1ac7129516f7edad60c1e00d3c44a
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Wed Mar 20 11:26:09 2013 -0400
+
+    add json file
+
+commit e28a8162c4f35a8bd05703fdc44b9a2744ffcc92
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Tue Mar 19 18:01:06 2013 -0400
+
+    add work distribution
+
+commit 2a33462542c365de4b0fed443478b5cca32cf1ad
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 17 19:20:13 2013 -0400
+
+    add index.html file, add reference to jquery stuff
+
+commit 94b5b14947185aaa2d2c86a15915d0eb0e8f54a3
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 17 19:15:33 2013 -0400
+
+    import jquery stuff
+
+commit bac1fea9ccd8fde8ec95986c99e79bd43099e06f
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 17 19:04:40 2013 -0400
+
+    fix mistake in readme. again.
+
+commit 81c030c64c5b704c4b8cc3efc032e2e774d46d22
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 17 19:03:33 2013 -0400
+
+    fix mistake in readme
+
+commit b0d34766743d2e123fcef8bb311d14a15ad491f8
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Sun Mar 17 19:01:47 2013 -0400
+
+    update readme
+
+commit 518a23c44fade764adf4ac70f32957aa623b7e7d
+Author: Jiang Tao Hong <jiang.hong@mail.utoronto.ca>
+Date:   Sat Mar 16 00:10:44 2013 -0400
+
+    added name to readme
+
+commit 90526c1662b491594517ca097fc0f26c1b14cf9d
+Author: Mihai Nicolae <m.nicolae91@gmail.com>
+Date:   Fri Mar 15 17:17:51 2013 -0700
+
+    Initial commit
